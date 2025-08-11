@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Premium ISO-certified beauty salon in Debra Bazaar offering luxury services and professional makeup/beautician training.">
+    <title>Santi's Makeover and Beauty Salon | Debra Bazaar</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        as="style">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D14D72',
+                        secondary: '#FFABAB',
+                        accent: '#FCC8D1',
+                        dark: '#2B2730',
+                        light: '#FEF2F4',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Custom styles */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #D14D72;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+
+        .section-divider {
+            height: 80px;
+            background: linear-gradient(to bottom right, #FEF2F4 49.9%, transparent 50%);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease-out;
+            }
+
+            .mobile-menu.open {
+                max-height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-body text-dark bg-light">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl md:text-3xl font-heading font-bold text-primary">Santi's Makeover</a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home"
+                        class="nav-link text-dark hover:text-primary transition-colors duration-300 active">Home</a>
+                    <a href="#about"
+                        class="nav-link text-dark hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#services"
+                        class="nav-link text-dark hover:text-primary transition-colors duration-300">Services</a>
+                    <a href="#training"
+                        class="nav-link text-dark hover:text-primary transition-colors duration-300">Training</a>
+                    <a href="#contact"
+                        class="nav-link text-dark hover:text-primary transition-colors duration-300">Contact</a>
+                    <a href="https://wa.me/919002717291"
+                        class="text-primary hover:text-secondary transition-colors duration-300">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="pt-4 pb-2 space-y-3">
+                    <a href="#home"
+                        class="block py-2 text-dark hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="#about"
+                        class="block py-2 text-dark hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#services"
+                        class="block py-2 text-dark hover:text-primary transition-colors duration-300">Services</a>
+                    <a href="#training"
+                        class="block py-2 text-dark hover:text-primary transition-colors duration-300">Training</a>
+                    <a href="#gallery"
+                        class="block py-2 text-dark hover:text-primary transition-colors duration-300">Gallery</a>
+                    <a href="#contact"
+                        class="block py-2 text-dark hover:text-primary transition-colors duration-300">Contact</a>
+                    <a href="https://wa.me/919002717291"
+                        class="block py-2 text-dark hover:text-primary transition-colors duration-300">Book via
+                        WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-[90vh] max-h-[800px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 hero-overlay z-10"></div>
+        <img src="./images/banner1.jpg" alt="Santi's Makeover Salon Interior"
+            class="absolute inset-0 w-full h-full object-cover object-center" loading="eager">
+
+        <div class="container mx-auto px-6 relative z-20 text-center animate-fade-in">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6">Elegance in Beauty,
+                Excellence in Training</h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">ISO-certified salon in Debra Bazaar
+                offering luxurious beauty services and professional training programs.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#services"
+                    class="bg-primary hover:bg-opacity-90 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105">Our
+                    Services</a>
+                <a href="https://wa.me/+919002717291?text=Hello! I'd like to book an appointment at Santi's Makeover."
+                    class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105">Book
+                    via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 animate-slide-up">
+                    <div class="relative rounded-xl overflow-hidden shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1680&q=80"
+                            alt="Santi Dolai - Founder" class="w-full h-auto object-cover" loading="lazy">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                            <h3 class="text-white font-heading text-xl">Santi Dolai</h3>
+                            <p class="text-accent">Founder & Lead Stylist</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 animate-slide-up">
+                    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-6">About Our Salon</h2>
+                    <p class="mb-4 text-lg">Founded in 2010 by Santi Dolai, Santi's Makeover and Beauty Salon has become
+                        Debra Bazaar's premier destination for luxury beauty services and professional training.</p>
+                    <p class="mb-6 text-lg">Our ISO-certified salon combines traditional techniques with modern
+                        innovations to deliver exceptional results for every client.</p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-light p-4 rounded-lg border border-accent">
+                            <h4 class="font-heading text-primary mb-2">15+</h4>
+                            <p class="text-sm">Years Experience</p>
+                        </div>
+                        <div class="bg-light p-4 rounded-lg border border-accent">
+                            <h4 class="font-heading text-primary mb-2">600+</h4>
+                            <p class="text-sm">Happy Clients</p>
+                        </div>
+                        <div class="bg-light p-4 rounded-lg border border-accent">
+                            <h4 class="font-heading text-primary mb-2">50+</h4>
+                            <p class="text-sm">Trained Professionals</p>
+                        </div>
+                        <div class="bg-light p-4 rounded-lg border border-accent">
+                            <h4 class="font-heading text-primary mb-2">ISO</h4>
+                            <p class="text-sm">Certified Training</p>
+                        </div>
+                    </div>
+
+                    <a href="#training"
+                        class="inline-block bg-primary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-all duration-300">Learn
+                        About Our Training</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4">Our Premium Services</h2>
+                <p class="max-w-2xl mx-auto text-dark">Experience luxury beauty treatments tailored to your unique needs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://png.pngtree.com/background/20250108/original/pngtree-traditional-indian-pakistani-bridal-with-heavy-makeup-and-jewelry-picture-image_15493847.jpg"
+                            alt="Makeup Services"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                            loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading text-primary mb-3">Bridal Makeup</h3>
+                        <p class="mb-4 text-dark">Flawless bridal looks with premium products that last all day and
+                            night.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Hair Services"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                            loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading text-primary mb-3">Hair Treatments</h3>
+                        <p class="mb-4 text-dark">Revitalize your hair with our keratin, botox, and spa treatments.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Facial Treatments"
+                            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                            loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading text-primary mb-3">Luxury Facials</h3>
+                        <p class="mb-4 text-dark">Gold, diamond, and pearl facials for radiant, glowing skin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs Section -->
+    <section id="training" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4">Professional Training Programs</h2>
+                <p class="max-w-2xl mx-auto text-dark">ISO-certified courses to launch your career in beauty and makeup
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Training Program 1 -->
+                <div class="bg-light rounded-xl p-8 shadow-md border-l-4 border-primary">
+                    <h3 class="text-2xl font-heading text-primary mb-4">Makeup Artist Certification</h3>
+                    <p class="mb-4">8-week intensive program covering all aspects of professional makeup artistry.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                            <span>Bridal, party, and special effects makeup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                            <span>HD and airbrush techniques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                            <span>Color theory and face shaping</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                            <span>Business and client management</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap justify-between items-center">
+                        <span class="font-medium text-lg text-primary"></span>
+                        <a href="https://wa.me/+919002717291?text=Hello! I'm interested in the Makeup Artist Certification."
+                            class="bg-primary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-all duration-300">Enquire
+                            Now</a>
+                    </div>
+                </div>
+
+                <!-- Training Program 2 -->
+                <div class="bg-light rounded-xl p-8 shadow-md border-l-4 border-primary">
+                    <h3 class="text-2xl font-heading text-primary mb-4">Professional Beautician Course</h3>
+                    <p class="mb-4">12-week comprehensive training in all aspects of beauty therapy.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                            <span>Facials and skin treatments</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                            <span>Hair cutting and styling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                            <span>Waxing and hair removal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-secondary mr-2 mt-1"></i>
+                            <span>Manicure, pedicure, and nail art</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap justify-between items-center">
+                        <span class="font-medium text-lg text-primary"></span>
+                        <a href="https://wa.me/+919002717291?text=Hello! I'm interested in the Professional Beautician Course."
+                            class="bg-primary hover:bg-opacity-90 text-white px-6 py-2 rounded-full font-medium transition-all duration-300">Enquire
+                            Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="bg-primary bg-opacity-10 rounded-xl p-8">
+                <h3 class="text-2xl font-heading text-primary text-center mb-8">What Our Students Say</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary font-bold mr-4">
+                                P</div>
+                            <div>
+                                <h4 class="font-heading">Priya S.</h4>
+                                <div class="flex text-secondary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"Santi's training program transformed my passion into a profession! The hands-on training and
+                            business skills helped me start my own salon within 6 months of completing the course."</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-primary font-bold mr-4">
+                                A</div>
+                            <div>
+                                <h4 class="font-heading">Anjali R.</h4>
+                                <div class="flex text-secondary">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p>"The ISO certification gave me credibility when applying for jobs. I now work at a luxury spa
+                            in Kolkata thanks to the skills I learned at Santi's Makeover."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4">Contact Us</h2>
+                <p class="max-w-xl mx-auto text-dark text-lg">Reach out to learn more about our services or training
+                    programs</p>
+            </div>
+
+            <div class="max-w-2xl mx-auto bg-light rounded-xl shadow-md p-8">
+                <div class="flex flex-col items-center space-y-8">
+                    <!-- Contact Information -->
+                    <div class="w-full">
+                        <h3 class="text-2xl font-heading text-primary mb-6 text-center">Get In Touch</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-dark mb-1">Location</h4>
+                                    <p class="text-dark">Debra, Haipat, West Bengal 721126</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-dark mb-1">Phone</h4>
+                                    <p class="text-dark">
+                                        <a href="tel:+919002717291"
+                                            class="hover:text-primary transition-colors duration-300">+91 9002717291</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-dark mb-1">Email</h4>
+                                    <p class="text-dark">
+                                        <a href="mailto:info.santi@gmail.com"
+                                            class="hover:text-primary transition-colors duration-300">info.santi@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-start">
+                                <div class="bg-primary bg-opacity-10 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-dark mb-1">Hours</h4>
+                                    <p class="text-dark">Daily: 10 AM - 8 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="w-full text-center">
+                        <h4 class="font-heading text-primary mb-4">Follow Us</h4>
+                        <div class="flex justify-center space-x-4">
+                            <a href="#"
+                                class="bg-primary bg-opacity-10 hover:bg-opacity-20 text-primary w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-primary bg-opacity-10 hover:bg-opacity-20 text-primary w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/+919002717291?text=Hello! I'd like to book an appointment at Santi's Makeover."
+                                class="bg-primary bg-opacity-10 hover:bg-opacity-20 text-primary w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.752731124223!2d87.55881481504237!3d22.395749185273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02b38261a94f09%3A0x59098e2a535e5134!2sSanti%27s+Makeover+and+Beauty+Salon!5e0!3m2!1sen!2sin!4v1698765432100"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Santi's Makeover and Beauty Salon Location"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-heading text-primary mb-4">Santi's Makeover</h3>
+                    <p class="mb-4">ISO-certified beauty salon and training center in Debra Bazaar, West Bengal.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-secondary transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-secondary transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/+919002717291?text=Hello! I'd like to book an appointment at Santi's Makeover."
+                            class="text-white hover:text-secondary transition-colors duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-primary mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-secondary transition-colors duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-secondary transition-colors duration-300">About Us</a>
+                        </li>
+                        <li><a href="#services" class="hover:text-secondary transition-colors duration-300">Services</a>
+                        </li>
+                        <li><a href="#training" class="hover:text-secondary transition-colors duration-300">Training</a>
+                        </li>
+                        <li><a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-primary mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-secondary transition-colors duration-300">Bridal Makeup</a>
+                        </li>
+                        <li><a href="#" class="hover:text-secondary transition-colors duration-300">Hair Treatments</a>
+                        </li>
+                        <li><a href="#" class="hover:text-secondary transition-colors duration-300">Facials</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors duration-300">Nail Art</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors duration-300">Waxing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-heading text-primary mb-4">Contact Info</h4>
+                    <address class="not-italic">
+                        <p class="mb-2">Debra, Haipat</p>
+                        <p class="mb-2">West Bengal 721126</p>
+                        <p class="mb-2">
+                            <a href="tel:+919002717291" class="hover:text-secondary transition-colors duration-300">+91
+                                9002717291</a>
+                        </p>
+                        <p>
+                            <a href="mailto:info.santi@gmail.com"
+                                class="hover:text-secondary transition-colors duration-300">info.santi@gmail.com</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2025 Santi's Makeover and Beauty Salon. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" id="back-to-top"
+        class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 opacity-0 invisible hover:bg-opacity-90">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('open');
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function () {
+            var backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.remove('opacity-100', 'visible');
+                backToTop.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    if (document.getElementById('mobile-menu').classList.contains('open')) {
+                        document.getElementById('mobile-menu').classList.remove('open');
+                    }
+                }
+            });
+        });
+
+        // Active nav link on scroll
+        window.addEventListener('scroll', function () {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
