@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Santi's Makeover & Beauty Salon | Academy — ISO-certified luxury beauty salon and professional training center in Debra Bazaar, West Bengal." />
+  <meta name="keywords" content="beauty salon Debra Bazaar, makeup artist West Bengal, ISO certified beauty courses, bridal makeup Debra, beautician training, hair spa Debra Bazaar, Santi Makeover" />
+  <title>Santi's Makeover & Beauty Salon | Academy</title>
+
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sandip-dolai/makeover-by-santi/main/favicon.png" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@200;300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── NAVBAR ───────────────────────────────────── -->
+  <header id="navbar">
+    <div class="container">
+      <nav class="nav-inner">
+        <a href="#home" class="nav-brand">
+          <span class="brand-name">Santi's Makeover</span>
+          <span class="brand-sub">Beauty Salon &amp; Academy</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#training">Academy</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="https://wa.me/919002717291?text=Hello! I'd like to book an appointment at Santi's Makeover." class="btn-wa" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#home"  onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#training" onclick="closeMenu()">Academy</a>
+    <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="https://wa.me/919002717291" target="_blank" style="color:var(--rose)"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+  </div>
+
+  <!-- ── HERO ─────────────────────────────────────── -->
+  <section id="home">
+    <div class="hero-bg"></div>
+    <!-- src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop" -->
+    <img class="hero-img"
+      src="https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1170&auto=format&fit=crop"
+      alt="Santi's Makeover Salon"
+      loading="eager" />
+    <div class="hero-frame" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-eyebrow">Welcome to</span>
+        <h1 class="hero-title">Santi's Makeover<br/><em>&amp; Beauty Salon</em></h1>
+        <p class="hero-tagline">Beauty Salon &nbsp;·&nbsp; Academy &nbsp;·&nbsp; Debra Bazaar, West Bengal</p>
+        <span class="hero-badge"><i class="fas fa-certificate"></i> &nbsp; ISO Certified Training Center</span>
+        <div class="hero-actions">
+          <a href="#services" class="btn-primary"><i class="fas fa-spa"></i> Explore Services</a>
+          <a href="https://wa.me/919002717291?text=Hello! I'd like to book an appointment." class="btn-outline" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <i class="fas fa-chevron-down"></i>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <span class="stat-num">15+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num">600+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num">50+</span>
+          <span class="stat-label">Trained Professionals</span>
+        </div>
+        <div class="stat-item reveal">
+          <span class="stat-num">ISO</span>
+          <span class="stat-label">Certified Center</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ─────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal-left">
+          <div class="about-gold-box"></div>
+          <img class="about-img-main"
+            src="https://scontent.fccu27-3.fna.fbcdn.net/v/t39.30808-6/670956025_1976700116387222_6392167350408667889_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=CeQcQiDD9p0Q7kNvwELR3yH&_nc_oc=AdoBAPWSkZCVO9t-qmEWl18freJ03oyx4egOemI4O7DXe0ucy8why0nKfIJHak-MOmRoZDR6IXR_AhX8ECfSRQQH&_nc_zt=23&_nc_ht=scontent.fccu27-3.fna&_nc_gid=EPKvNnBNF34ux0JQ4XK7PQ&_nc_ss=7b2a8&oh=00_Af4enCfvVBGHa_PfeFH4Ci56k-7fHBCOdnfBxYLE3yD71Q&oe=69FAB4E7"
+            alt="Santi Dolai — Founder &amp; Lead Stylist"
+            loading="lazy" />
+          <div class="about-iso-badge">
+            <strong>ISO</strong>
+            Certified
+          </div>
+        </div>
+        <div class="about-text reveal-right">
+          <span class="section-tag">Our Story</span>
+          <h2 class="section-title">Where Beauty Meets <span>Artistry</span></h2>
+          <div class="divider-ornament"><i class="fas fa-diamond"></i></div>
+          <p>Founded in 2010 by <strong>Santi Dolai</strong>, Santi's Makeover and Beauty Salon has become Debra Bazaar's premier destination for luxury beauty services and professional training.</p>
+          <p>Our ISO-certified salon combines time-honoured techniques with modern innovations to deliver exceptional, personalised results for every client — from bridal looks to everyday elegance.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-diamond"></i> Bridal Specialists</li>
+            <li><i class="fas fa-diamond"></i> ISO Certified</li>
+            <li><i class="fas fa-diamond"></i> Premium Products</li>
+            <li><i class="fas fa-diamond"></i> Expert Trainers</li>
+            <li><i class="fas fa-diamond"></i> Modern Techniques</li>
+            <li><i class="fas fa-diamond"></i> 15+ Years Experience</li>
+          </ul>
+          <a href="#training" class="btn-primary" style="width:fit-content">Explore Our Academy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ──────────────────────────────────── -->
+  <section id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">Premium <span>Beauty</span> Services</h2>
+        <div class="divider-ornament"><i class="fas fa-diamond"></i></div>
+        <p class="section-sub">Experience luxury beauty treatments tailored to your unique needs, delivered by trained professionals.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Featured: Bridal -->
+        <!-- src="https://images.unsplash.com/photo-1607748851687-ba9a10438621?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0" -->
+        <div class="service-card featured reveal">
+          <img class="service-card-img"
+          src="https://images.unsplash.com/photo-1737515031439-2998a5bfcb6f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Bridal Makeup"
+            loading="lazy" />
+          <div class="service-card-body">
+            <span class="service-tag">Signature Service</span>
+            <div class="service-icon"><i class="fas fa-crown"></i></div>
+            <h3>Bridal Makeup</h3>
+            <p>Your most important day deserves flawless, long-lasting beauty. Our bridal artists craft bespoke looks using premium products that stay picture-perfect from morning to midnight.</p>
+          </div>
+        </div>
+        <!-- Hair -->
+        <div class="service-card reveal">
+          <img class="service-card-img"
+            src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Hair Treatments"
+            loading="lazy" />
+          <div class="service-card-body">
+            <span class="service-tag">Hair</span>
+            <div class="service-icon"><i class="fas fa-wind"></i></div>
+            <h3>Hair Treatments</h3>
+            <p>Revitalise your hair with keratin, botox, and nourishing spa treatments curated for your hair type.</p>
+          </div>
+        </div>
+        <!-- Facials -->
+        <div class="service-card reveal">
+          <img class="service-card-img"
+            src="https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Luxury Facials"
+            loading="lazy" />
+          <div class="service-card-body">
+            <span class="service-tag">Skincare</span>
+            <div class="service-icon"><i class="fas fa-gem"></i></div>
+            <h3>Luxury Facials</h3>
+            <p>Gold, diamond, and pearl facials for radiant, glowing skin that turns heads.</p>
+          </div>
+        </div>
+        <!-- Nail Art -->
+        <div class="service-card reveal">
+          <img class="service-card-img"
+            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=700&auto=format&fit=crop"
+            alt="Nail Art"
+            loading="lazy" />
+          <div class="service-card-body">
+            <span class="service-tag">Nails</span>
+            <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+            <h3>Nail Art &amp; Spa</h3>
+            <p>Creative nail art, manicures, and pedicures for the perfect finishing touch.</p>
+          </div>
+        </div>
+        <!-- Waxing -->
+        <div class="service-card reveal">
+          <img class="service-card-img"
+            src="https://images.unsplash.com/photo-1733145820348-042a1ae7682a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Waxing &amp; Threading"
+            loading="lazy" />
+          <div class="service-card-body">
+            <span class="service-tag">Grooming</span>
+            <div class="service-icon"><i class="fas fa-leaf"></i></div>
+            <h3>Waxing &amp; Threading</h3>
+            <p>Smooth, lasting hair removal with gentle premium waxes and expert threading.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRAINING / ACADEMY ─────────────────────────── -->
+  <section id="training">
+    <div class="container">
+      <div class="training-header reveal">
+        <span class="section-tag" style="color:var(--gold)">Our Academy</span>
+        <h2 class="section-title">Professional <span>Training</span> Programs</h2>
+        <div class="divider-ornament"><i class="fas fa-diamond"></i></div>
+        <p class="section-sub">ISO-certified courses crafted to launch your career in beauty and makeup artistry.</p>
+      </div>
+      <div class="training-grid">
+        <div class="training-card reveal">
+          <p class="tc-week">8-Week Intensive</p>
+          <h3>Makeup Artist Certification</h3>
+          <p>A hands-on, industry-focused program covering all dimensions of professional makeup artistry, from bridal to editorial.</p>
+          <ul class="training-features">
+            <li>Bridal, party &amp; special effects makeup</li>
+            <li>HD and airbrush techniques</li>
+            <li>Color theory and face shaping</li>
+            <li>Business and client management</li>
+            <li>Portfolio development</li>
+          </ul>
+          <a href="https://wa.me/919002717291?text=Hello! I'm interested in the Makeup Artist Certification." class="btn-enquire" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Enquire Now
+          </a>
+        </div>
+        <div class="training-card reveal">
+          <p class="tc-week">12-Week Comprehensive</p>
+          <h3>Professional Beautician Course</h3>
+          <p>Complete beauty therapy training covering skincare, hair, nails and more — everything you need to run a successful salon.</p>
+          <ul class="training-features">
+            <li>Facials and advanced skin treatments</li>
+            <li>Hair cutting, colouring &amp; styling</li>
+            <li>Waxing and hair removal</li>
+            <li>Manicure, pedicure &amp; nail art</li>
+            <li>Salon management skills</li>
+          </ul>
+          <a href="https://wa.me/919002717291?text=Hello! I'm interested in the Professional Beautician Course." class="btn-enquire" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Enquire Now
+          </a>
+        </div>
+      </div>
+      <div class="academy-perks">
+        <div class="perk-item reveal">
+          <div class="perk-icon"><i class="fas fa-certificate"></i></div>
+          <h4>ISO Certification</h4>
+          <p>Internationally recognised qualification</p>
+        </div>
+        <div class="perk-item reveal">
+          <div class="perk-icon"><i class="fas fa-hands-helping"></i></div>
+          <h4>Hands-On Training</h4>
+          <p>Live models &amp; real-world practice</p>
+        </div>
+        <div class="perk-item reveal">
+          <div class="perk-icon"><i class="fas fa-briefcase"></i></div>
+          <h4>Career Support</h4>
+          <p>Job placement assistance &amp; mentorship</p>
+        </div>
+        <div class="perk-item reveal">
+          <div class="perk-icon"><i class="fas fa-users"></i></div>
+          <h4>Small Batches</h4>
+          <p>Personalised attention for every student</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ──────────────────────────────── -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="testi-header reveal">
+        <span class="section-tag">Kind Words</span>
+        <h2 class="section-title">What Our <span>Clients Say</span></h2>
+        <div class="divider-ornament"><i class="fas fa-diamond"></i></div>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>Santi's training program transformed my passion into a profession! The hands-on training and business skills helped me start my own salon within 6 months of completing the course.</p>
+          <div class="testi-name">Priya S.</div>
+          <div class="testi-role">Makeup Artist — Medinipur</div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>The ISO certification gave me credibility when applying for jobs. I now work at a luxury spa in Kolkata thanks to the skills I learned at Santi's Makeover.</p>
+          <div class="testi-name">Anjali R.</div>
+          <div class="testi-role">Beautician — Kolkata</div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>My bridal look was absolutely stunning! Santi madam understood exactly what I wanted and the makeup lasted throughout my entire wedding day and evening.</p>
+          <div class="testi-name">Susmita D.</div>
+          <div class="testi-role">Bride — Debra Bazaar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ─────────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <span class="section-tag">Reach Us</span>
+          <h2 class="section-title">Get In <span>Touch</span></h2>
+          <div class="divider-ornament"><i class="fas fa-diamond"></i></div>
+          <p class="section-sub">Whether you want to book a service or learn about our academy, we'd love to hear from you.</p>
+
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <p class="ci-label">Location</p>
+              <p class="ci-value">Debra, Haipat, West Bengal 721126</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <p class="ci-label">Phone / WhatsApp</p>
+              <p class="ci-value"><a href="tel:+919002717291">+91 90027 17291</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p class="ci-label">Email</p>
+              <p class="ci-value"><a href="mailto:info.makeover.santi@gmail.com">info.makeover.santi@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <p class="ci-label">Working Hours</p>
+              <p class="ci-value">Daily: 10:00 AM – 8:00 PM</p>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <a href="https://www.facebook.com/makeover.by.santi" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/919002717291" target="_blank" rel="noopener" class="social-btn wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal-right">
+          <h3>Send a Message</h3>
+          <div class="form-group">
+            <label for="cf-name">Your Name</label>
+            <input type="text" id="cf-name" placeholder="Priya Sharma" />
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Phone Number</label>
+            <input type="tel" id="cf-phone" placeholder="+91 98765 43210" />
+          </div>
+          <div class="form-group">
+            <label for="cf-service">Interested In</label>
+            <select id="cf-service">
+              <option value="">— Select a service —</option>
+              <option>Bridal Makeup</option>
+              <option>Hair Treatment</option>
+              <option>Luxury Facial</option>
+              <option>Nail Art</option>
+              <option>Makeup Artist Certification</option>
+              <option>Professional Beautician Course</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-msg">Message</label>
+            <textarea id="cf-msg" placeholder="Tell us how we can help you…"></textarea>
+          </div>
+          <button class="btn-submit" onclick="sendWhatsApp()">
+            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MAP ──────────────────────────────────────────── -->
+  <div id="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.752731124223!2d87.55881481504237!3d22.395749185273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02b38261a94f09%3A0x59098e2a535e5134!2sSanti%27s+Makeover+and+Beauty+Salon!5e0!3m2!1sen!2sin!4v1698765432100"
+      allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Santi's Makeover and Beauty Salon Location">
+    </iframe>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="brand-name">Santi's Makeover</span>
+          <span class="brand-sub">Beauty Salon &amp; Academy · ISO Certified</span>
+          <p>Premier destination for luxury beauty services and professional beautician training in Debra Bazaar, West Bengal — since 2010.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/makeover.by.santi" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/919002717291" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#training">Academy</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Bridal Makeup</a></li>
+            <li><a href="#services">Hair Treatments</a></li>
+            <li><a href="#services">Luxury Facials</a></li>
+            <li><a href="#services">Nail Art &amp; Spa</a></li>
+            <li><a href="#services">Waxing &amp; Threading</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919002717291">+91 90027 17291</a></li>
+            <li><a href="mailto:info.makeover.santi@gmail.com">info.makeover.santi@gmail.com</a></li>
+            <li><a href="#map-section">Debra, Haipat, WB 721126</a></li>
+            <li><a href="#contact">Daily: 10 AM – 8 PM</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Santi's Makeover &amp; Beauty Salon. All rights reserved.</span>
+        <span style="color:var(--gold)">Made with <i class="fas fa-heart" style="color:var(--rose)"></i> in Debra Bazaar</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#home" id="btt" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      document.getElementById('btt').classList.toggle('show', window.scrollY > 400);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
+          closeMenu();
+        }
+      });
+    });
+
+    // Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navAs = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) cur = s.id;
+      });
+      navAs.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${cur}`);
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+    // WhatsApp form submit
+    function sendWhatsApp() {
+      const name    = document.getElementById('cf-name').value.trim();
+      const phone   = document.getElementById('cf-phone').value.trim();
+      const service = document.getElementById('cf-service').value;
+      const msg     = document.getElementById('cf-msg').value.trim();
+      const text = `Hello! I'm ${name || 'a potential client'}.\nPhone: ${phone || 'N/A'}\nInterested in: ${service || 'General inquiry'}\n${msg ? 'Message: ' + msg : ''}`;
+      window.open(`https://wa.me/919002717291?text=${encodeURIComponent(text)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
