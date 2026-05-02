@@ -9,18 +9,23 @@
 
   <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sandip-dolai/makeover-by-santi/main/favicon.png" />
 
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@200;300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ── NAVBAR ───────────────────────────────────── -->
-  <header id="navbar">
+  <header id="navbar" class="scrolled">
     <div class="container">
       <nav class="nav-inner">
         <a href="#home" class="nav-brand">
@@ -48,22 +53,25 @@
   </header>
 
   <!-- Mobile Nav Overlay -->
-  <div class="mobile-nav" id="mobile-nav">
-    <a href="#home"  onclick="closeMenu()">Home</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#services" onclick="closeMenu()">Services</a>
-    <a href="#training" onclick="closeMenu()">Academy</a>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <a href="#home"         onclick="closeMenu()">Home</a>
+    <a href="#about"        onclick="closeMenu()">About</a>
+    <a href="#services"     onclick="closeMenu()">Services</a>
+    <a href="#training"     onclick="closeMenu()">Academy</a>
     <a href="#testimonials" onclick="closeMenu()">Reviews</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
-    <a href="https://wa.me/919002717291" target="_blank" style="color:var(--rose)"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+    <a href="#contact"      onclick="closeMenu()">Contact</a>
+    <a href="https://wa.me/919002717291" target="_blank" class="mobile-wa"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
   </div>
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
 
   <!-- ── HERO ─────────────────────────────────────── -->
   <section id="home">
     <div class="hero-bg"></div>
-    <!-- src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1974&auto=format&fit=crop" -->
-    <img class="hero-img"
-      src="https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1170&auto=format&fit=crop"
+    <!-- Skeleton placeholder shown until image loads -->
+    <div class="hero-img-skeleton" id="hero-skeleton"></div>
+    <img class="hero-img" id="hero-img"
+      data-src="https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1170&auto=format&fit=crop"
       alt="Santi's Makeover Salon"
       loading="eager" />
     <div class="hero-frame" aria-hidden="true"></div>
@@ -94,11 +102,11 @@
           <span class="stat-label">Years Experience</span>
         </div>
         <div class="stat-item reveal">
-          <span class="stat-num">600+</span>
+          <span class="stat-num">1000+</span>
           <span class="stat-label">Happy Clients</span>
         </div>
         <div class="stat-item reveal">
-          <span class="stat-num">50+</span>
+          <span class="stat-num">100+</span>
           <span class="stat-label">Trained Professionals</span>
         </div>
         <div class="stat-item reveal">
@@ -115,10 +123,10 @@
       <div class="about-grid">
         <div class="about-img-wrap reveal-left">
           <div class="about-gold-box"></div>
-          <img class="about-img-main"
-            src="https://scontent.fccu27-3.fna.fbcdn.net/v/t39.30808-6/670956025_1976700116387222_6392167350408667889_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=CeQcQiDD9p0Q7kNvwELR3yH&_nc_oc=AdoBAPWSkZCVO9t-qmEWl18freJ03oyx4egOemI4O7DXe0ucy8why0nKfIJHak-MOmRoZDR6IXR_AhX8ECfSRQQH&_nc_zt=23&_nc_ht=scontent.fccu27-3.fna&_nc_gid=EPKvNnBNF34ux0JQ4XK7PQ&_nc_ss=7b2a8&oh=00_Af4enCfvVBGHa_PfeFH4Ci56k-7fHBCOdnfBxYLE3yD71Q&oe=69FAB4E7"
-            alt="Santi Dolai — Founder &amp; Lead Stylist"
-            loading="lazy" />
+          <div class="img-skeleton" id="about-skeleton"></div>
+          <img class="about-img-main lazy-img" id="about-img"
+            data-src="https://scontent.fccu27-3.fna.fbcdn.net/v/t39.30808-6/670956025_1976700116387222_6392167350408667889_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_ohc=CeQcQiDD9p0Q7kNvwELR3yH&_nc_oc=AdoBAPWSkZCVO9t-qmEWl18freJ03oyx4egOemI4O7DXe0ucy8why0nKfIJHak-MOmRoZDR6IXR_AhX8ECfSRQQH&_nc_zt=23&_nc_ht=scontent.fccu27-3.fna&_nc_gid=EPKvNnBNF34ux0JQ4XK7PQ&_nc_ss=7b2a8&oh=00_Af4enCfvVBGHa_PfeFH4Ci56k-7fHBCOdnfBxYLE3yD71Q&oe=69FAB4E7"
+            alt="Santi Dolai — Founder &amp; Lead Stylist" />
           <div class="about-iso-badge">
             <strong>ISO</strong>
             Certified
@@ -155,12 +163,13 @@
       </div>
       <div class="services-grid">
         <!-- Featured: Bridal -->
-        <!-- src="https://images.unsplash.com/photo-1607748851687-ba9a10438621?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0" -->
         <div class="service-card featured reveal">
-          <img class="service-card-img"
-          src="https://images.unsplash.com/photo-1737515031439-2998a5bfcb6f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Bridal Makeup"
-            loading="lazy" />
+          <div class="service-img-wrap">
+            <div class="img-skeleton"></div>
+            <img class="service-card-img lazy-img"
+              data-src="https://images.unsplash.com/photo-1737515031439-2998a5bfcb6f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0"
+              alt="Bridal Makeup" />
+          </div>
           <div class="service-card-body">
             <span class="service-tag">Signature Service</span>
             <div class="service-icon"><i class="fas fa-crown"></i></div>
@@ -170,10 +179,10 @@
         </div>
         <!-- Hair -->
         <div class="service-card reveal">
-          <img class="service-card-img"
-            src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Hair Treatments"
-            loading="lazy" />
+          <div class="img-skeleton"></div>
+          <img class="service-card-img lazy-img"
+            data-src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+            alt="Hair Treatments" />
           <div class="service-card-body">
             <span class="service-tag">Hair</span>
             <div class="service-icon"><i class="fas fa-wind"></i></div>
@@ -183,10 +192,10 @@
         </div>
         <!-- Facials -->
         <div class="service-card reveal">
-          <img class="service-card-img"
-            src="https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Luxury Facials"
-            loading="lazy" />
+          <div class="img-skeleton"></div>
+          <img class="service-card-img lazy-img"
+            data-src="https://images.unsplash.com/photo-1713085085470-fba013d67e65?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+            alt="Luxury Facials" />
           <div class="service-card-body">
             <span class="service-tag">Skincare</span>
             <div class="service-icon"><i class="fas fa-gem"></i></div>
@@ -196,10 +205,10 @@
         </div>
         <!-- Nail Art -->
         <div class="service-card reveal">
-          <img class="service-card-img"
-            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=700&auto=format&fit=crop"
-            alt="Nail Art"
-            loading="lazy" />
+          <div class="img-skeleton"></div>
+          <img class="service-card-img lazy-img"
+            data-src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=700&auto=format&fit=crop"
+            alt="Nail Art" />
           <div class="service-card-body">
             <span class="service-tag">Nails</span>
             <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
@@ -209,10 +218,10 @@
         </div>
         <!-- Waxing -->
         <div class="service-card reveal">
-          <img class="service-card-img"
-            src="https://images.unsplash.com/photo-1733145820348-042a1ae7682a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="Waxing &amp; Threading"
-            loading="lazy" />
+          <div class="img-skeleton"></div>
+          <img class="service-card-img lazy-img"
+            data-src="https://images.unsplash.com/photo-1733145820348-042a1ae7682a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0"
+            alt="Waxing &amp; Threading" />
           <div class="service-card-body">
             <span class="service-tag">Grooming</span>
             <div class="service-icon"><i class="fas fa-leaf"></i></div>
@@ -305,7 +314,7 @@
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p>Santi's training program transformed my passion into a profession! The hands-on training and business skills helped me start my own salon within 6 months of completing the course.</p>
-          <div class="testi-name">Priya S.</div>
+          <div class="testi-name">Moumita Manna</div>
           <div class="testi-role">Makeup Artist — Medinipur</div>
         </div>
         <div class="testi-card reveal">
@@ -314,17 +323,17 @@
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
           <p>The ISO certification gave me credibility when applying for jobs. I now work at a luxury spa in Kolkata thanks to the skills I learned at Santi's Makeover.</p>
-          <div class="testi-name">Anjali R.</div>
-          <div class="testi-role">Beautician — Kolkata</div>
+          <div class="testi-name">Supriya Das</div>
+          <div class="testi-role">Beautician — Medinipur</div>
         </div>
         <div class="testi-card reveal">
           <div class="testi-quote">"</div>
           <div class="testi-stars">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p>My bridal look was absolutely stunning! Santi madam understood exactly what I wanted and the makeup lasted throughout my entire wedding day and evening.</p>
-          <div class="testi-name">Susmita D.</div>
-          <div class="testi-role">Bride — Debra Bazaar</div>
+          <p>Ami hair growth treatment er jonno Mam er kache esechilam, ekhon pray 2 month hoye geche. Ami khub bhalo result peyechi—amar scalp e onek notun chul gajache. Bishesh kore Mam ebong puro team er behavior khub e bhalo.</p>
+          <div class="testi-name">Arpita Maity</div>
+          <div class="testi-role">Client — Debra Bazaar</div>
         </div>
       </div>
     </div>
@@ -380,11 +389,11 @@
           <h3>Send a Message</h3>
           <div class="form-group">
             <label for="cf-name">Your Name</label>
-            <input type="text" id="cf-name" placeholder="Priya Sharma" />
+            <input type="text" id="cf-name" placeholder="Priya Sharma" autocomplete="name" />
           </div>
           <div class="form-group">
             <label for="cf-phone">Phone Number</label>
-            <input type="tel" id="cf-phone" placeholder="+91 98765 43210" />
+            <input type="tel" id="cf-phone" placeholder="+91 98765 43210" autocomplete="tel" />
           </div>
           <div class="form-group">
             <label for="cf-service">Interested In</label>
@@ -468,7 +477,12 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2025 Santi's Makeover &amp; Beauty Salon. All rights reserved.</span>
-        <span style="color:var(--gold)">Made with <i class="fas fa-heart" style="color:var(--rose)"></i> in Debra Bazaar</span>
+        <span class="footer-credit">
+          Made with <i class="fas fa-heart"></i> in Debra Bazaar &nbsp;·&nbsp;
+          Designed &amp; Developed by <a href="https://in.linkedin.com/in/sandipdolai" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <strong>Sandip Dolai</strong>
+          </a>
+        </span>
       </div>
     </div>
   </footer>
@@ -476,68 +490,6 @@
   <!-- Back to Top -->
   <a href="#home" id="btt" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
 
-  <script>
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
-      document.getElementById('btt').classList.toggle('show', window.scrollY > 400);
-    });
-
-    // Mobile menu
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobile-nav');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileNav.classList.toggle('open');
-      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
-    });
-    function closeMenu() {
-      hamburger.classList.remove('open');
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          window.scrollTo({ top: target.offsetTop - 72, behavior: 'smooth' });
-          closeMenu();
-        }
-      });
-    });
-
-    // Active nav link
-    const sections = document.querySelectorAll('section[id]');
-    const navAs = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let cur = '';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) cur = s.id;
-      });
-      navAs.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === `#${cur}`);
-      });
-    });
-
-    // Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-
-    // WhatsApp form submit
-    function sendWhatsApp() {
-      const name    = document.getElementById('cf-name').value.trim();
-      const phone   = document.getElementById('cf-phone').value.trim();
-      const service = document.getElementById('cf-service').value;
-      const msg     = document.getElementById('cf-msg').value.trim();
-      const text = `Hello! I'm ${name || 'a potential client'}.\nPhone: ${phone || 'N/A'}\nInterested in: ${service || 'General inquiry'}\n${msg ? 'Message: ' + msg : ''}`;
-      window.open(`https://wa.me/919002717291?text=${encodeURIComponent(text)}`, '_blank');
-    }
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
